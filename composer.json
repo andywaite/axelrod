@@ -1,0 +1,15 @@
+{
+    "name": "andywaite/axelrod",
+    "autoload": {
+        "psr-4": {
+            "Andywaite\\Axelrod\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrew Waite",
+            "email": "andrewwaite@insites.com"
+        }
+    ],
+    "require": {}
+}
