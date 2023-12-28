@@ -16,8 +16,6 @@ This project is named after [Robert Axelrod](https://en.wikipedia.org/wiki/Rober
 ## What is the Prisoner's dilemma game?
 The Prisoner's dilemma is a game where two players are given the choice to either cooperate or defect. If both players cooperate, they both get 3 points. If both players defect, they both get 1 point. If one player cooperates and the other defects, the defector gets 5 points and the cooperator gets 0 points.
 
-Where this gets interesting is that the players don't know what the other player will do. They can either choose to cooperate or defect, and they don't know what the other player will do. They can't communicate with each other.
-
 The game is called the Prisoner's dilemma because it's a good analogy for the situation two prisoners are in when they're being interrogated by the police. If they both stay silent, they both get a light sentence. If they both confess, they both get a heavy sentence. If one confesses and the other stays silent, the confessor gets a light sentence and the other gets a heavy sentence.
 
 ## Why is it interesting?
