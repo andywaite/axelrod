@@ -54,7 +54,7 @@ $strategies = [
 //    GPT::create() // See readme.md for details. Note - this can create a large bill with OpenAI
 ];
 
-$targetNumberOfGames = 100;
+$targetNumberOfGames = 10000;
 $actualNumberOfGames = rand($targetNumberOfGames * 0.9, $targetNumberOfGames * 1.1); // Randomise the number of games within a 10% margin to prevent strategies from knowing when the game will end
 
 $output = new Console();
