@@ -16,6 +16,12 @@ use Andywaite\Axelrod\Strategy\AlwaysNasty;
 use Andywaite\Axelrod\Strategy\DoubleDefectRetaliate;
 use Andywaite\Axelrod\Strategy\Friedman;
 use Andywaite\Axelrod\Strategy\GPT;
+use Andywaite\Axelrod\Strategy\GPTGenerated\AdaptiveStrategy;
+use Andywaite\Axelrod\Strategy\GPTGenerated\AnalyticalAdaptiveStrategy;
+use Andywaite\Axelrod\Strategy\GPTGenerated\ForgivingTitForTat;
+use Andywaite\Axelrod\Strategy\GPTGenerated\PeriodicPlayer;
+use Andywaite\Axelrod\Strategy\GPTGenerated\ProactiveAdaptiveStrategy;
+use Andywaite\Axelrod\Strategy\GPTGenerated\RandomTitForTat;
 use Andywaite\Axelrod\Strategy\Hannah;
 use Andywaite\Axelrod\Strategy\Joss;
 use Andywaite\Axelrod\Strategy\CollusionSacrificial;
@@ -39,6 +45,12 @@ $strategies = [
     new CollusionSacrificial(),
     new CollusionWinner(),
     new NormanLovett(),
+    new AdaptiveStrategy(),
+    new AnalyticalAdaptiveStrategy(),
+    new ForgivingTitForTat(),
+    new PeriodicPlayer(),
+    new RandomTitForTat(),
+    new ProactiveAdaptiveStrategy()
 //    GPT::create() // See readme.md for details. Note - this can create a large bill with OpenAI
 ];
 
