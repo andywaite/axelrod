@@ -14,9 +14,9 @@ Christmas break project - I felt inspired to try making this after watching this
 This project is named after [Robert Axelrod](https://en.wikipedia.org/wiki/Robert_Axelrod), who is a professor of political science at the University of Michigan. He is the author of the book [The Evolution of Cooperation](https://en.wikipedia.org/wiki/The_Evolution_of_Cooperation), which is a study of the Prisoner's dilemma and how it relates to global politics.
 
 ## What is the Prisoner's dilemma game?
-The Prisoner's dilemma is a game where two players are given the choice to either cooperate or defect. If both players cooperate, they both get 3 points. If both players defect, they both get 1 point. If one player cooperates and the other defects, the defector gets 5 points and the cooperator gets 0 points.
+The Prisoner's dilemma is a game where two players are given the choice to either cooperate or defect. The game is called the Prisoner's dilemma because it's a good analogy for the situation two prisoners are in when they're being interrogated by the police. If they both stay silent (cooperate), they both get a light sentence. If they both confess (defect), they both get a heavy sentence. If one confesses and the other stays silent, the confessor gets a light sentence and the other gets a heavy sentence.
 
-The game is called the Prisoner's dilemma because it's a good analogy for the situation two prisoners are in when they're being interrogated by the police. If they both stay silent, they both get a light sentence. If they both confess, they both get a heavy sentence. If one confesses and the other stays silent, the confessor gets a light sentence and the other gets a heavy sentence.
+This version of the game is based on reward rather than punishment. If both players cooperate, they both get 3 points. If both players defect, they both get 1 point. If one player cooperates and the other defects, the defector gets 5 points and the cooperator gets 0 points.
 
 ## Why is it interesting?
 
