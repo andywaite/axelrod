@@ -41,3 +41,12 @@ The interface has two methods: `getChoice` and `notifyOpponentChoice`. The first
 See `src/Strategy/TitForTat.php` and the other files in this folder for examples of a strategies.
 
 Once you've added a strategy, add it to the array in `run.php` file to test it.
+
+## Using GPT to play the game
+I've also added a strategy that uses [GPT-3](https://en.wikipedia.org/wiki/GPT-3) to play the game. It's not very good at the game, but it's interesting to see how it plays.
+
+To use it, you'll need to create a `.env` file with your OpenAI API key in it. See `.env.example` for an example. You'll then need to add the GPT strategy to the array in `run.php` file to test it.
+
+What I've noticed is it tends to begin by cooperating for around 5-8 turns. It then tries to defect, and has a handful of turns where it seems to be testing its opponent. However, it then seems to settle on a strategy of defecting every turn (which is not usually optimal). I'm not sure why this is, but it's interesting to see.
+
+You may wish to play with the prompt in `src/Strategy/GPT.php` to see if you can get it to play better.

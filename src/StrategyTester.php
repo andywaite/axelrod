@@ -2,16 +2,18 @@
 
 namespace Andywaite\Axelrod;
 
+use Andywaite\Axelrod\Logger\Logger;
+
 class StrategyTester
 {
     protected $scoreByStrategy = [];
 
-    public static function createGameMatrixer(array $strategies, int $iterations): self
+    public static function createStrategyTester(array $strategies, int $iterations, Logger $logger): self
     {
-        return new StrategyTester($iterations, $strategies);
+        return new StrategyTester($iterations, $strategies, $logger);
     }
 
-    public function __construct(protected int $iterations, protected array $strategies)
+    public function __construct(protected int $iterations, protected array $strategies, protected Logger $logger)
     {
     }
 
@@ -27,12 +29,20 @@ class StrategyTester
         $player1 = Player::createPlayer($cloneStrategy1);
         $player2 = Player::createPlayer($cloneStrategy2);
 
-        echo "\n\nSet up game for {$this->iterations} iterations, {$strategy1Name} initial score {$player1->getPoints()} and {$strategy2Name} initial score {$player2->getPoints()}";
+        $this->logger->log('Set up game', [
+            'iterations' => $this->iterations,
+            'strategy1' => $strategy1Name,
+            'score1' => $player1->getPoints(),
+            'strategy2' => $strategy2Name,
+            'score2' => $player2->getPoints(),
+        ]);
 
-        $game = Game::createGame($player1, $player2);
+        $this->logger->log('Underscore is cooperate, hash is defect');
+
+        $game = Game::createGame($player1, $player2, $this->logger);
 
         for ($i = 0; $i < $this->iterations; $i++) {
-            $game->play();
+            $game->playRound();
         }
 
         if (!isset($this->scoreByStrategy[$strategy1Name])) {
@@ -46,7 +56,13 @@ class StrategyTester
         $this->scoreByStrategy[$strategy1Name] += $player1->getPoints();
         $this->scoreByStrategy[$strategy2Name] += $player2->getPoints();
 
-        echo "\nAfter {$this->iterations} iterations, {$strategy1Name} scored {$player1->getPoints()} and {$strategy2Name} scored {$player2->getPoints()}";
+        $this->logger->log('Game complete', [
+            'iterations' => $this->iterations,
+            'strategy1' => $strategy1Name,
+            'score1' => $player1->getPoints(),
+            'strategy2' => $strategy2Name,
+            'score2' => $player2->getPoints(),
+        ]);
     }
 
     // Every player must play every other player
@@ -63,9 +79,6 @@ class StrategyTester
 
         arsort($this->scoreByStrategy);
 
-        echo "\n\nFinal scores:\n";
-        foreach ($this->scoreByStrategy as $strategy => $score) {
-            echo "\n{$strategy} scored {$score}";
-        }
+        $this->logger->log('Final scores', $this->scoreByStrategy);
     }
 }
